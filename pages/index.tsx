@@ -14,8 +14,6 @@ export default function Home() {
       </Head>
       <NavigationBar />
       <BodyContainer />
-
-      <BodyContainer />
     </Flex>
   );
 }
