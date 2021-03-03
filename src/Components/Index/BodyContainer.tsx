@@ -24,7 +24,7 @@ const BodyContainer = () => {
         </HStack>
       </Flex>
       <Heading mt="5" mb="5">
-        <Text>LIVE NOW</Text>
+        <Text>LIVE FEED</Text>
       </Heading>
       <Flex direction="row" justify="center">
         <HStack spacing={5}>
