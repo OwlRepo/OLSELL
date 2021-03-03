@@ -1,19 +1,15 @@
-import { Flex, Text } from "@chakra-ui/react";
+import { AutoSizer, List } from "react-virtualized";
+import { Flex, Text, VStack } from "@chakra-ui/react";
 import React, { useContext } from "react";
 
 import { LiveVideoContext } from "../../../Context/LiveVideoContext";
-import { NextPage } from "next";
 
-// interface Props {
-//   albumId?: String;
-//   id?: String;
-//   title?: String;
-//   url?: String;
-//   thumbnailUrl?: String;
-// }
+interface Props {
+  index: number;
+  imgUrl: string;
+}
 
-const LiveVideoThumbnail = () => {
-  const liveVideoContext = useContext(LiveVideoContext);
+const LiveVideoThumbnail = (props: Props) => {
   return (
     <Flex
       direction="column"
@@ -24,27 +20,30 @@ const LiveVideoThumbnail = () => {
       borderRadius="md"
       justify="center"
       align="center"
+      mt="10"
+      mb="10"
+      // style={style}
     >
-      <Text>{}</Text>
+      <img src={props.imgUrl} alt="thumbnail" height={200} width={200} />
     </Flex>
   );
 };
 
 export default LiveVideoThumbnail;
-
-// LiveVideoThumbnail.getInitialProps = async (context) => {
-//   const res = await fetch("http://localhost:3000/api/hello");
-//   const parsedJson = res.json();
-//   const stringifiedData = await parsedJson.then((value) => {
-//     console.log(value.name);
-//     return value.name;
-//   });
-//   console.log(res.status);
-//   return {
-//     id: JSON.stringify(stringifiedData.id),
-//     albumId: stringifiedData.albumId,
-//     thumbnailUrl: stringifiedData.thumbnailUrl,
-//     title: JSON.stringify(stringifiedData.title),
-//     url: stringifiedData.url,
-//   };
-// };
+// {liveVideoContext.map((value) => {
+//   return (
+// <Flex
+//   key={value.id}
+//   direction="column"
+//   bg="white"
+//   boxShadow="md"
+//   h="80"
+//   w="xl"
+//   borderRadius="md"
+//   justify="center"
+//   align="center"
+// >
+//   <img src={value.url} alt="thumbnail" height={200} width={200} />
+// </Flex>
+//   );
+// })}
