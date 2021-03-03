@@ -21,13 +21,17 @@ const NavButtons = [
 
 const NavigationBar = () => {
   return (
-    <Flex {...styleProps.navigationContainer}>
+    <Flex {...styleProps.navigationContainer} position="fixed">
       <Image {...styleProps.appLogo} />
 
       <HStack {...styleProps.navButtonsContainer}>
-        {NavButtons.map((btn) => {
+        {NavButtons.map((btn, index) => {
           return (
-            <Tooltip aria-label={btn.ariaLabel} label={btn.ariaLabel}>
+            <Tooltip
+              aria-label={btn.ariaLabel}
+              label={btn.ariaLabel}
+              key={index}
+            >
               <IconButton
                 aria-label={btn.ariaLabel}
                 icon={btn.icon}
@@ -52,10 +56,13 @@ const NavigationBar = () => {
 
 const styleProps = {
   navigationContainer: {
+    bg: "white",
     align: "center",
     justify: "space-between",
     boxShadow: "sm",
     p: "5",
+    right: "0%",
+    left: "0%",
   },
   appLogo: {
     src: "/olsell_logo.png",
