@@ -24,7 +24,12 @@ const LiveVideoThumbnail = (props: Props) => {
       mb="10"
       // style={style}
     >
-      <img src={props.imgUrl} alt="thumbnail" height={200} width={200} />
+      <img
+        src={props.imgUrl}
+        alt="Thumbnail Loading..."
+        height={200}
+        width={200}
+      />
     </Flex>
   );
 };
