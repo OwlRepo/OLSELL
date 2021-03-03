@@ -12,9 +12,8 @@ import { NextPage } from "next";
 //   thumbnailUrl?: String;
 // }
 
-const liveVideoContext = useContext(LiveVideoContext);
-
 const LiveVideoThumbnail = () => {
+  const liveVideoContext = useContext(LiveVideoContext);
   return (
     <Flex
       direction="column"

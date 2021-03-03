@@ -11,7 +11,7 @@ interface Props {
   resList: Array<Object>;
 }
 
-const Home: NextPage<Props> = (props: Props) => {
+const Home = () => {
   return (
     <Flex direction="column">
       <Head>
