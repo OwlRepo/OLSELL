@@ -1,8 +1,5 @@
-import { AutoSizer, List } from "react-virtualized";
-import { Flex, Text, VStack } from "@chakra-ui/react";
-import React, { useContext } from "react";
-
-import { LiveVideoContext } from "../../../Context/LiveVideoContext";
+import { Flex } from "@chakra-ui/react";
+import React from "react";
 
 interface Props {
   index: number;
@@ -35,20 +32,3 @@ const LiveVideoThumbnail = (props: Props) => {
 };
 
 export default LiveVideoThumbnail;
-// {liveVideoContext.map((value) => {
-//   return (
-// <Flex
-//   key={value.id}
-//   direction="column"
-//   bg="white"
-//   boxShadow="md"
-//   h="80"
-//   w="xl"
-//   borderRadius="md"
-//   justify="center"
-//   align="center"
-// >
-//   <img src={value.url} alt="thumbnail" height={200} width={200} />
-// </Flex>
-//   );
-// })}
