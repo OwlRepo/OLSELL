@@ -8,14 +8,14 @@ interface Props {
 
 export const LiveVideoContextProvider: React.FC<Props> = (props) => {
   const { children, ...restProps } = props;
-  const [contextBindedValue, setContextBindedValue] = useState([]);
+  // const [contextBindedValue, setContextBindedValue] = useState([]);
 
-  useEffect(() => {
-    setContextBindedValue(props.arrayOfData);
-  }, []);
+  // useEffect(() => {
+  //   setContextBindedValue(props.arrayOfData);
+  // }, []);
 
   return (
-    <LiveVideoContext.Provider value={contextBindedValue}>
+    <LiveVideoContext.Provider value={props.arrayOfData}>
       {children}
     </LiveVideoContext.Provider>
   );
