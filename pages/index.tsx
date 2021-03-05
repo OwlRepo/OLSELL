@@ -1,3 +1,4 @@
+import { GetServerSideProps, GetStaticProps, NextPage } from "next";
 import {
   LiveVideoContext,
   LiveVideoContextProvider,
@@ -10,7 +11,6 @@ import { Flex } from "@chakra-ui/react";
 import Head from "next/head";
 import LiveVideoThumbnailModel from "../src/Models/LiveVideoThumbnailModel";
 import NavigationBar from "../src/Components/Index/NavigationBar";
-import { NextPage } from "next";
 
 interface Props {
   arrayOfData: [];
@@ -40,11 +40,20 @@ const Home: NextPage<Props> = (props: Props) => {
 
 export default Home;
 
-Home.getInitialProps = async (_) => {
+// Home.getInitialProps = async (_) => {
+//   const res = await fetch("https://jsonplaceholder.typicode.com/photos/");
+//   const json = res.json();
+//   const parsedJson = await json.then((value) => {
+//     return value;
+//   });
+//   return { arrayOfData: parsedJson };
+// };
+
+export const getServerSideProps: GetServerSideProps<Props> = async () => {
   const res = await fetch("https://jsonplaceholder.typicode.com/photos/");
   const json = res.json();
   const parsedJson = await json.then((value) => {
     return value;
   });
-  return { arrayOfData: parsedJson };
+  return { props: { arrayOfData: parsedJson } };
 };
