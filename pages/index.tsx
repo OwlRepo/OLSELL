@@ -49,6 +49,15 @@ export default Home;
 //   return { arrayOfData: parsedJson };
 // };
 
+// export const getStaticProps: GetStaticProps<Props> = async () => {
+//   const res = await fetch("https://jsonplaceholder.typicode.com/photos/");
+//   const json = res.json();
+//   const parsedJson = await json.then((value) => {
+//     return value;
+//   });
+//   return { props: { arrayOfData: parsedJson } };
+// };
+
 export const getServerSideProps: GetServerSideProps<Props> = async () => {
   const res = await fetch("https://jsonplaceholder.typicode.com/photos/");
   const json = res.json();
